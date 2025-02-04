@@ -72,6 +72,7 @@
 
             nativeBuildInputs = [
               pkgs.cmake
+              pkgs.gcc14
               pkgs.pkg-config
               hyprlandPkg
             ];
@@ -109,7 +110,10 @@
               make dev
             '';
             name = "hyprscroller-shell";
-            nativeBuildInputs = with pkgs; [ cmake ];
+            nativeBuildInputs = with pkgs; [
+              cmake
+              gcc14
+            ];
             buildInputs = [ hyprlandPkg ];
             inputsFrom = [
               hyprlandPkg
